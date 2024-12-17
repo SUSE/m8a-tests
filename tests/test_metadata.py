@@ -48,6 +48,7 @@ from bci_tester.data import GOLANG_CONTAINERS
 from bci_tester.data import GRAFANA_CONTAINERS
 from bci_tester.data import HELM_CONTAINER
 from bci_tester.data import INIT_CONTAINER
+from bci_tester.data import KEA_CONTAINERS
 from bci_tester.data import KERNEL_MODULE_CONTAINER
 from bci_tester.data import KIWI_CONTAINERS
 from bci_tester.data import L3_CONTAINERS
@@ -173,6 +174,7 @@ IMAGES_AND_NAMES: List[ParameterSet] = [
         for container_pcp in PCP_CONTAINERS
     ]
     + [(kiwi, "kiwi", ImageType.LANGUAGE_STACK) for kiwi in KIWI_CONTAINERS]
+    + [(kea, "kea", ImageType.APPLICATION) for kea in KEA_CONTAINERS]
     + [
         (tomcat_ctr, "apache-tomcat", ImageType.SAC_APPLICATION)
         for tomcat_ctr in TOMCAT_CONTAINERS
